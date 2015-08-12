@@ -72,7 +72,7 @@ class Catalin_Seo_CategoryController extends Mage_Catalog_CategoryController
             $this->_initLayoutMessages('checkout/session');
 
             // return json formatted response for ajax
-            if ($this->getRequest()->isAjax()) {
+            if (Mage::helper('catalin_seo')->isAjaxEnabled() && $this->getRequest()->isAjax()) {
                 
                 if(Mage::getEdition() == Mage::EDITION_ENTERPRISE){
                     $block = $this->getLayout()->getBlock('enterprisecatalog.leftnav');
